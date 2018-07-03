@@ -1,0 +1,22 @@
+  <button type="button" id="saved-article-button">Go back to saved soccer articles!</button>
+
+  <br>
+
+  <h2>
+  Notes for Article {{article_id}}
+  </h2>
+
+  {{#each notes}}
+      {{title}}<p>
+      <textarea class="form-control">{{body}}</textarea>
+      <p>
+      <button type="button" onclick="deleteNote('{{_id}}', '{{../article_id}}')">Delete</button>
+  {{/each}}
+
+  <label class="control-label" for="textarea-field">Add Note Below</label>
+  <form onsubmit="return false">
+    <div class="form-group">
+      <textarea class="form-control" id="textarea-field" style="width:400px;height:200px"   type="text"/></textarea>
+    </div>
+  </form>
+  <button type="button" onclick="addNote('{{article_id}}')">Add Note</button>

@@ -1,0 +1,19 @@
+  <script> 
+  {{#if articleCount}}
+    alert("You've got {{articleCount}} articles!");
+  {{/if}}
+  </script> 
+
+
+  <button type="button" id="saved-article-button">Saved Soccer Articles!</button>
+
+  <button type="button" id="get-article-button">Get Soccer Articles!</button>
+
+
+
+  {{#each results}}
+  <br>
+      <a href="{{link}}">{{title}}</a> <button type="button" onclick="articleNotes('{{title}}','{{link}}')">Article Notes</button>
+      <button type="button" onclick="deleteArticle('{{title}}','{{link}}')">Delete from Saved</button>
+  {{/each}}
+
